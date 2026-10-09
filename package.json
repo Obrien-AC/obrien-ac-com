@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && mkdir -p out/portal-demo && cp -R portal-demo/. out/portal-demo/",
+    "vercel-build": "npm run build",
     "start": "next start",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --noEmit",
