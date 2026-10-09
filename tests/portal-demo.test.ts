@@ -74,4 +74,14 @@ describe("static customer portal demo", () => {
     expect(app).toContain("tel:+13476340943");
     expect(app).toContain("mailto:chad@obrianac.com");
   });
+
+  it("exports and imports browser-local demo data without credentials or PDFs", () => {
+    expect(html).toContain('id="data-transfer"');
+    expect(app).toContain("function exportDemoData");
+    expect(app).toContain("function normalizeImport");
+    expect(app).toContain("function importDemoData");
+    expect(app).toContain('schema:"obrien-portal-demo"');
+    expect(app).toContain("Passwords and credentials are never exported");
+    expect(app).toContain("Locally selected confidential PDFs remain on this device");
+  });
 });
