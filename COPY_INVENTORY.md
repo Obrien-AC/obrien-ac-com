@@ -55,7 +55,7 @@ The independent static portal contains the safe presentation dataset:
 
 - 1 demonstration organization and 7 locations.
 - 3 simulated browser-only roles with all role/location mappings defined in source.
-- 7 proposal records with versions, prices, statuses and proposal PDFs.
+- 7 proposal records with versions, prices and statuses. Confidential proposal PDFs are selected locally and are not committed or published.
 - 8 BMW of Coconut Creek demonstration equipment units.
 - 5 clearly labeled BMW demonstration documents covering equipment, condition report, agreement, upcoming service and service history.
 - 4 initial demonstration service appointments, activity records, local decisions and local unit service requests.

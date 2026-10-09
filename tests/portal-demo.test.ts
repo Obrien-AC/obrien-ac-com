@@ -8,11 +8,12 @@ const html = readFileSync(resolve(root, "index.html"), "utf8");
 const manifest = JSON.parse(readFileSync(resolve(root, "data/documents.json"), "utf8"));
 
 describe("static customer portal demo", () => {
-  it("has seven exact proposal manifest records with viewable PDFs", () => {
+  it("has seven proposal metadata records without publishing confidential PDFs", () => {
     expect(manifest).toHaveLength(7);
-    expect(manifest.every((document: { filePath: string }) => document.filePath.endsWith(".pdf"))).toBe(true);
-    expect(manifest.every((document: { filePath: string }) => readFileSync(resolve(root, document.filePath)).length > 0)).toBe(true);
+    expect(manifest.every((document: { publicDocument: boolean }) => document.publicDocument === false)).toBe(true);
     expect(new Set(manifest.map((document: { documentId: string }) => document.documentId)).size).toBe(7);
+    expect(app).toContain("Confidential PDF not published · select it locally to preview");
+    expect(app).toContain("function pickFile");
   });
 
   it("labels the portal as a static demonstration", () => {

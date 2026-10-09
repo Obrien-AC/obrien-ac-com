@@ -10,7 +10,7 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 
 ## Documents
 
-The repository includes the approved proposal PDFs and clearly labeled BMW of Coconut Creek demonstration reports used by the portal. Because GitHub Pages is public hosting, these files are publicly retrievable and must not contain confidential information. The admin demo also supports selecting a local PDF for browser-only preview; local selections are never uploaded and must be reselected in another browser session.
+The repository includes proposal metadata and clearly labeled BMW of Coconut Creek demonstration reports. Confidential customer proposal PDFs are not committed or published through GitHub Pages. Select a proposal PDF locally for browser-only preview; local selections are never uploaded, exported, or retained for another browser session.
 
 ## Local test
 
