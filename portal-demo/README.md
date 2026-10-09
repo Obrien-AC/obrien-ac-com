@@ -10,7 +10,7 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 
 ## Documents
 
-No customer PDFs are committed. Use **Select local PDF** during the presentation. The browser creates a local object URL; the file is not uploaded. Local selections must be made again on another device or after a new browser session.
+The repository includes the approved proposal PDFs and clearly labeled BMW of Coconut Creek demonstration reports used by the portal. Because GitHub Pages is public hosting, these files are publicly retrievable and must not contain confidential information. The admin demo also supports selecting a local PDF for browser-only preview; local selections are never uploaded and must be reselected in another browser session.
 
 ## Local test
 
@@ -18,7 +18,7 @@ Serve this directory with any static server, then open `index.html`. Hash routes
 
 ## GitHub Pages
 
-The `deploy-portal-demo.yml` workflow uploads only `portal-demo/`. GitHub Pages must use **GitHub Actions** as its build source. The expected URL is `https://obrien-ac.github.io/obrien-customer-portal-demo/`.
+The root `deploy-pages.yml` workflow builds the copied website and packages this directory at `/portal-demo/`. GitHub Pages uses **GitHub Actions** as its build source. On the configured production domain, the login route is `https://obrien-ac.com/portal-demo/#/login`.
 
 ## Future production path
 
