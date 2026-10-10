@@ -53,13 +53,14 @@ User password hashes, salts, sessions and audit IP data were not copied or publi
 
 The independent static portal contains the safe presentation dataset:
 
-- 1 demonstration organization and 7 locations.
+- 1 demonstration organization and 9 locations.
 - 3 simulated browser-only roles with all role/location mappings defined in source.
 - 7 proposal records with versions, prices and statuses. Confidential proposal PDFs are selected locally and are not committed or published.
 - 8 BMW of Coconut Creek demonstration equipment units.
 - 5 clearly labeled BMW demonstration documents covering equipment, condition report, agreement, upcoming service and service history.
 - 4 initial demonstration service appointments, activity records, local decisions and local unit service requests.
-- Location imagery for all 7 authorized locations.
+- Location imagery for all 9 authorized locations.
+- 2 supplied Arrigo condition reports with verified dealership logos and building imagery, available from their location workspaces.
 - Browser-local JSON export/import for statuses, activity, appointments, decisions and requests.
 
 Local PDF selections are deliberately excluded from exports and remain only in the selecting browser. GitHub Pages cannot provide secure authentication, private PDFs, a shared database, server-side access control or real dispatch. Those functions require a protected backend and private object storage.

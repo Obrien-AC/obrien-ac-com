@@ -29,12 +29,25 @@ describe("static customer portal demo", () => {
     expect(app).toContain("#/dashboard");
   });
 
-  it("gives the presentation location manager all seven proposal locations", () => {
+  it("gives the presentation location manager all nine portfolio locations", () => {
     expect(app).toContain('"manager@demo.obrienac.com":{password:"LocationDemo!",name:"Dealership Location Manager",role:"location",locationIds:"all"}');
   });
 
   it("assigns a dashboard image to every authorized location", () => {
-    expect((app.match(/photo:"\.\/assets\//g) || [])).toHaveLength(7);
+    expect((app.match(/photo:"\.\/assets\//g) || [])).toHaveLength(9);
+  });
+
+  it("adds Arrigo Sawgrass and Margate with logos, building images, and condition reports", () => {
+    for (const location of ["arrigo-sawgrass", "arrigo-margate"]) {
+      expect(app).toContain(`id:"${location}"`);
+      expect(app).toContain(`./assets/${location}.jpg`);
+      expect(app).toContain(`./assets/${location}-logo.png`);
+      expect(readFileSync(resolve(root, `assets/${location}.jpg`)).length).toBeGreaterThan(0);
+      expect(readFileSync(resolve(root, `assets/${location}-logo.png`)).length).toBeGreaterThan(0);
+      expect(readFileSync(resolve(root, `documents/${location}-condition-report.pdf`)).length).toBeGreaterThan(0);
+    }
+    expect(app).toContain("function conditionReportPanel");
+    expect(app).toContain("function previewConditionReport");
   });
 
   it("does not expose demo credentials or bypass buttons in the login UI", () => {
