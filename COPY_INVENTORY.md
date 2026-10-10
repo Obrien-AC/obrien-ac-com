@@ -64,6 +64,8 @@ The independent static portal contains the safe presentation dataset:
 - 2 supplied Arrigo proposals: the Sawgrass two-system replacement proposal and Margate preventive-maintenance proposal, each attached to its matching location with in-browser viewing and download controls.
 - 1 supplied nine-sheet Arrigo Sawgrass electrical plan set, available from the Sawgrass Plans tab with embedded viewing and download controls.
 - Browser-local JSON export/import for statuses, activity, appointments, decisions and requests.
+- Executive command center with demonstration health scores, risk statuses, documented exposure, pending decisions and location-level next actions.
+- Searchable cross-location document center covering the supplied Arrigo files and BMW demonstration documents.
 
 Local PDF selections are deliberately excluded from exports and remain only in the selecting browser. GitHub Pages cannot provide secure authentication, private PDFs, a shared database, server-side access control or real dispatch. Those functions require a protected backend and private object storage.
 

@@ -117,4 +117,20 @@ describe("static customer portal demo", () => {
     expect(app).toContain("Passwords and credentials are never exported");
     expect(app).toContain("Locally selected confidential PDFs remain on this device");
   });
+
+  it("provides an executive command center with portfolio intelligence", () => {
+    expect(app).toContain("const LOCATION_INTELLIGENCE=");
+    expect(app).toContain("Portfolio intelligence.");
+    expect(app).toContain("Documented exposure");
+    expect(app).toContain("Action Required");
+    expect(app).toContain("function locationCard");
+  });
+
+  it("includes a searchable cross-location document center", () => {
+    expect(app).toContain("function documentRecords");
+    expect(app).toContain("function documents");
+    expect(app).toContain('id="document-search"');
+    expect(app).toContain('data-go="#/documents"');
+    expect(app).toContain("private object storage");
+  });
 });
