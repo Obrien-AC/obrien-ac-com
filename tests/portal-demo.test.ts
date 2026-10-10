@@ -61,6 +61,14 @@ describe("static customer portal demo", () => {
     }
   });
 
+  it("adds the supplied electrical plan set only to Arrigo Sawgrass", () => {
+    expect(app).toContain('title:"Electrical Plans"');
+    expect(app).toContain('metric:"9 sheets"');
+    expect(app).toContain('data-location-tab="plans"');
+    expect(app).toContain("function plansPanel");
+    expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-electrical-plans.pdf")).length).toBeGreaterThan(0);
+  });
+
   it("does not expose demo credentials or bypass buttons in the login UI", () => {
     expect(app).not.toContain("featured-demo");
     expect(app).not.toContain("demo-access");
