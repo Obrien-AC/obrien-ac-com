@@ -191,3 +191,7 @@ The earlier generated heroes for these five cards were removed. `public/project-
   - `amazon-reversed.svg` — [Amazon logo.svg](https://commons.wikimedia.org/wiki/File:Amazon_logo.svg) with the wordmark fill changed from #221f1f to white for dark backgrounds; orange smile unchanged. Used for both Amazon cards.
 - **Existing logos reused:** Four Seasons, Surfcomber, BMW (unchanged); Marriott (3 cards) and Jeep now shown white via CSS filter instead of on a light band.
 - **No authentic logo available, text wordmark in the logo slot:** Ritz-Carlton Residences (the only Commons Ritz logo is the Berlin property's and Ritz-Carlton's published guidelines discourage client use of its crest), Villa Grande Club, Arrigo Sawgrass, Riverside Hotel.
+
+### 2026-10-09: customer portal location image
+
+- **Volkswagen of South Miami:** replaced the customer/vehicle photo on the authorized-location card with the dealership exterior shown on the verified [Google Maps business listing](https://www.google.com/maps/place/Volkswagen+of+South+Miami/). The published derivative is `portal-demo/assets/volkswagen-south-miami.webp` (1448×1086 WebP, quality 88). Google Maps identifies the location as 17930 S Dixie Hwy, Miami, FL 33157. The image is used for location identification; underlying photo copyright remains with its owner.
