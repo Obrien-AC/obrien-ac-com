@@ -50,6 +50,17 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function previewConditionReport");
   });
 
+  it("attaches each supplied Arrigo proposal to its matching location workspace", () => {
+    expect(app).toContain("function proposalDocumentPanel");
+    expect(app).toContain("function previewLocationProposal");
+    expect(app).toContain("OB-2026-0930-MARGATE-PM");
+    expect(app).toContain("2849-AC");
+    for (const file of ["arrigo-sawgrass-replacement-proposal.pdf", "arrigo-margate-maintenance-proposal.pdf"]) {
+      expect(app).toContain(`./documents/${file}`);
+      expect(readFileSync(resolve(root, `documents/${file}`)).length).toBeGreaterThan(0);
+    }
+  });
+
   it("does not expose demo credentials or bypass buttons in the login UI", () => {
     expect(app).not.toContain("featured-demo");
     expect(app).not.toContain("demo-access");

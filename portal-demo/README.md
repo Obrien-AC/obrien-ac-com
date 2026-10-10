@@ -10,7 +10,7 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 
 ## Documents
 
-The repository includes proposal metadata and clearly labeled BMW of Coconut Creek demonstration reports. Confidential customer proposal PDFs are not committed or published through GitHub Pages. Select a proposal PDF locally for browser-only preview; local selections are never uploaded, exported, or retained for another browser session.
+The repository includes proposal metadata and clearly labeled BMW of Coconut Creek demonstration reports. The supplied Arrigo CDJR Sawgrass replacement proposal and Arrigo CDJR Margate maintenance proposal are attached to their matching location workspaces beside the previously supplied condition reports. Other confidential customer proposal PDFs are not committed or published through GitHub Pages; select those locally for browser-only preview.
 
 ## Local test
 

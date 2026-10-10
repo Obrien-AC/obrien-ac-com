@@ -61,6 +61,7 @@ The independent static portal contains the safe presentation dataset:
 - 4 initial demonstration service appointments, activity records, local decisions and local unit service requests.
 - Location imagery for all 9 authorized locations.
 - 2 supplied Arrigo condition reports with verified dealership logos and building imagery, available from their location workspaces.
+- 2 supplied Arrigo proposals: the Sawgrass two-system replacement proposal and Margate preventive-maintenance proposal, each attached to its matching location with in-browser viewing and download controls.
 - Browser-local JSON export/import for statuses, activity, appointments, decisions and requests.
 
 Local PDF selections are deliberately excluded from exports and remain only in the selecting browser. GitHub Pages cannot provide secure authentication, private PDFs, a shared database, server-side access control or real dispatch. Those functions require a protected backend and private object storage.
