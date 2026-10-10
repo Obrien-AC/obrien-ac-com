@@ -20,3 +20,12 @@
 .location-logo{display:block;width:min(250px,78%);height:72px;object-fit:contain;object-position:left center;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}.location-hero-logo{display:block;width:min(360px,70vw);max-height:105px;margin-bottom:24px;object-fit:contain;object-position:left center;filter:drop-shadow(0 5px 22px rgba(0,0,0,.75))}.location-card:has(.location-logo) h3{margin-top:92px}.condition-feature{grid-template-columns:repeat(3,minmax(0,1fr))}.condition-account strong{font-size:5rem}.report-count span{max-width:100px;text-align:center;line-height:1.25}.proposal-value{display:grid;gap:8px;flex:0 0 245px;padding:25px;border:1px solid rgba(54,202,130,.28);border-radius:14px;background:#08120c}.proposal-value small{color:#839087;font-size:.63rem;text-transform:uppercase;letter-spacing:.08em}.proposal-value strong{color:#70e1a6;font-size:2.1rem}.proposal-value span{color:#9aa69e;font-size:.68rem;line-height:1.5}
 @media(max-width:600px){.condition-feature{grid-template-columns:1fr}.location-logo{height:62px}.location-card:has(.location-logo) h3{margin-top:82px}.proposal-document{flex-direction:column}.proposal-value{width:100%;flex-basis:auto}}
 @media(max-width:600px){.plan-viewer{padding:6px}.plan-viewer iframe{height:58vh}}
+
+/* Brighter card surfaces retain the dark premium palette while improving separation. */
+:root{--panel:#101a13;--panel2:#17251b;--line:rgba(255,255,255,.16);--muted:#9aa69e}
+.metric,.panel,.proposal,.condition-card,.terms-grid article,.history-ledger article,.request-list article{background:linear-gradient(145deg,#142019,#0e1711)}
+.location-card{border-color:rgba(255,255,255,.2);background:linear-gradient(145deg,#18271d,#101a13)}
+.location-card.photo:after{background:linear-gradient(0deg,rgba(6,13,9,.9),rgba(6,13,9,.12))}
+.feature-grid button,.equipment-card{border-color:rgba(255,255,255,.18);background:linear-gradient(145deg,#17251b,#0f1912)}
+.score-card,.report-hero,.agreement-hero,.visit-card,.equipment-toolbar{background:radial-gradient(circle at 80% 0,rgba(54,202,130,.16),transparent 38%),linear-gradient(145deg,#173020,#0d1912)}
+.proposal-value{background:#102018}
