@@ -133,4 +133,15 @@ describe("static customer portal demo", () => {
     expect(app).toContain('data-go="#/documents"');
     expect(app).toContain("private object storage");
   });
+
+  it("adds elite capital planning and executive reporting workspaces", () => {
+    expect(app).toContain("const CAPITAL_PLAN=");
+    expect(app).toContain("const PORTFOLIO_ALERTS=");
+    expect(app).toContain("function capitalPlan");
+    expect(app).toContain("function executiveReport");
+    expect(app).toContain('data-go="#/capital"');
+    expect(app).toContain('data-go="#/report"');
+    expect(app).toContain("Comfort systems.<br><em>Business clarity.</em>");
+    expect(app).toContain("Five-year modeled plan");
+  });
 });
