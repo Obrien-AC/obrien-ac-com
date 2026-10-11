@@ -31,6 +31,9 @@ describe("static customer portal demo", () => {
 
   it("gives the presentation location manager all nine portfolio locations", () => {
     expect(app).toContain('"morgan@obrienaccounts.com":{password:"morganfamily",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
+    expect(app).toContain('title:"Ten rooftop units. Clear action priorities."');
+    expect(app).toContain('title:"Drainage risk, organized by documented unit."');
+    expect(app).toContain('data-location-tab="equipment"');
   });
 
   it("assigns a dashboard image to every authorized location", () => {
