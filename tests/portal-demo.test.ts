@@ -34,6 +34,8 @@ describe("static customer portal demo", () => {
     expect(app).toContain('title:"Ten rooftop units. Clear action priorities."');
     expect(app).toContain('title:"Drainage risk, organized by documented unit."');
     expect(app).toContain('data-location-tab="equipment"');
+    expect(app).toContain('data-go="#/location/${s.locationId}/upcoming"');
+    expect(app).toContain('class="clickable-window" data-go="#/report"');
   });
 
   it("assigns a dashboard image to every authorized location", () => {
