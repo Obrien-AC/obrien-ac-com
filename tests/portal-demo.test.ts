@@ -36,6 +36,10 @@ describe("static customer portal demo", () => {
     expect(app).toContain('data-location-tab="equipment"');
     expect(app).toContain('data-go="#/location/${s.locationId}/upcoming"');
     expect(app).toContain('class="clickable-window" data-go="#/report"');
+    expect(app).toContain('function requestCenter()');
+    expect(app).toContain('function notificationCenter()');
+    expect(app).toContain('function presentationMode()');
+    expect(app).toContain('View asset details');
   });
 
   it("assigns a dashboard image to every authorized location", () => {
