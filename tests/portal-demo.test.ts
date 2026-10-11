@@ -24,13 +24,13 @@ describe("static customer portal demo", () => {
 
   it("supports all three presentation roles and hash navigation", () => {
     expect(app).toContain("group@demo.obrienac.com");
-    expect(app).toContain("manager@demo.obrienac.com");
+    expect(app).toContain("morgan@obrienac.com");
     expect(app).toContain("admin@demo.obrienac.com");
     expect(app).toContain("#/dashboard");
   });
 
   it("gives the presentation location manager all nine portfolio locations", () => {
-    expect(app).toContain('"manager@demo.obrienac.com":{password:"LocationDemo!",name:"Dealership Location Manager",role:"location",locationIds:"all"}');
+    expect(app).toContain('"morgan@obrienac.com":{password:"Morganfamily",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
   });
 
   it("assigns a dashboard image to every authorized location", () => {
@@ -59,6 +59,14 @@ describe("static customer portal demo", () => {
       expect(app).toContain(`./documents/${file}`);
       expect(readFileSync(resolve(root, `documents/${file}`)).length).toBeGreaterThan(0);
     }
+  });
+
+  it("adds the Units 7 and 8 Elite replacement bundle to Arrigo Sawgrass", () => {
+    expect(app).toContain("Units 7 & 8 Elite HVAC Replacement Bundle");
+    expect(app).toContain("$76,892.00");
+    expect(app).toContain("Two-system bundle · 6% discount · $4,908 savings");
+    expect(app).toContain("function locationProposalDocuments");
+    expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-units-7-8-replacement-proposal.pdf")).length).toBeGreaterThan(0);
   });
 
   it("adds the supplied electrical plan set only to Arrigo Sawgrass", () => {

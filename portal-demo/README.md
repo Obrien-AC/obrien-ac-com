@@ -5,12 +5,12 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 ## Demo accounts
 
 - Group manager: `group@demo.obrienac.com` / `MorganDemo!`
-- Location manager with all nine portfolio locations: `manager@demo.obrienac.com` / `LocationDemo!`
+- Morgan location manager with all nine portfolio locations: `morgan@obrienac.com` / `Morganfamily`
 - O'Brien administrator: `admin@demo.obrienac.com` / `ObrienDemo!`
 
 ## Documents
 
-The repository includes proposal metadata and clearly labeled BMW of Coconut Creek demonstration reports. The supplied Arrigo CDJR Sawgrass replacement proposal, electrical plans and Arrigo CDJR Margate maintenance proposal are attached to their matching location workspaces beside the previously supplied condition reports. Other confidential customer proposal PDFs are not committed or published through GitHub Pages; select those locally for browser-only preview.
+The repository includes proposal metadata and clearly labeled BMW of Coconut Creek demonstration reports. The supplied Arrigo CDJR Sawgrass Units 9 & 10 proposal, Units 7 & 8 Elite HVAC Replacement Bundle, electrical plans and Arrigo CDJR Margate maintenance proposal are attached to their matching location workspaces beside the previously supplied condition reports. Other confidential customer proposal PDFs are not committed or published through GitHub Pages; select those locally for browser-only preview.
 
 The executive presentation layer includes a portfolio health score, action-required count, documented-exposure summary, pending decisions, location-level health/status intelligence, a priority brief, role-aware context, and a searchable cross-location document center. These values are explicitly demonstration data; production use requires server-enforced identity, private storage and shared audit records.
 
