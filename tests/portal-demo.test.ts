@@ -45,8 +45,8 @@ describe("static customer portal demo", () => {
     expect(app).toContain('View asset details');
   });
 
-  it("scopes the Sawgrass account to one featured location while retaining every portal feature", () => {
-    expect(app).toContain('"sawgrass@obrienac.com":{password:"saw123",name:"Arrigo Sawgrass Manager",role:"location",locationIds:["arrigo-sawgrass"],featuredLocationId:"arrigo-sawgrass"}');
+  it("scopes the Sawgrass account to its dealership and highlighted Elite Membership workspace", () => {
+    expect(app).toContain('"sawgrass@obrienac.com":{password:"saw123",name:"Arrigo Sawgrass Manager",role:"location",locationIds:["morgan-residence","arrigo-sawgrass"],featuredLocationId:"morgan-residence"}');
     expect(app).toContain("function allowedLocationIds");
     expect(app).toContain("function portfolioAlerts");
     expect(app).toContain("function scopedCapitalPlan");

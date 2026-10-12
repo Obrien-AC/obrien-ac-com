@@ -24,7 +24,7 @@ Presentation account for the Arrigo Sawgrass workspace:
 
 - Email: `sawgrass@obrienac.com`
 - Password: `saw123`
-- Access: Arrigo CDJR Sawgrass only, with the complete portal feature set
+- Access: Arrigo CDJR Sawgrass plus the highlighted O'Brien Elite Membership workspace, with the complete portal feature set
 
 ## Development
 
