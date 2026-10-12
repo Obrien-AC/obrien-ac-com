@@ -87,8 +87,10 @@ describe("static customer portal demo", () => {
 
   it("adds the Units 7 and 8 Elite replacement bundle to Arrigo Sawgrass", () => {
     expect(app).toContain("Units 7 & 8 Elite HVAC Replacement Bundle");
+    expect(app).toContain("UNITS 7 & 8 · UPDATED");
     expect(app).toContain("$76,892.00");
-    expect(app).toContain("Two-system bundle · 6% discount · $4,908 savings");
+    expect(app).toContain("Existing indoor handlers remain on site and are not included for removal or disposal.");
+    expect(app).toContain("Updated scope · 6% discount · $4,908 savings");
     expect(app).toContain("function locationProposalDocuments");
     expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-units-7-8-replacement-proposal.pdf")).length).toBeGreaterThan(0);
   });
