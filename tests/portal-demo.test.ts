@@ -93,6 +93,10 @@ describe("static customer portal demo", () => {
     expect(app).toContain("Existing indoor handlers remain on site and are not included for removal or disposal.");
     expect(app).toContain("Updated scope · 6% discount · $4,908 savings");
     expect(app).toContain("function locationProposalDocuments");
+    expect(app).toContain('asset:"Units 7 & 8 Elite HVAC replacement bundle"');
+    expect(app).toContain('amount:76892,status:"Updated proposal ready · 6% bundle discount"');
+    expect(app).toContain('title:"Updated proposal ready",detail:"Arrigo Sawgrass · Units 7 & 8 Elite bundle · $76,892"');
+    expect(app).toContain('route:"#/location/arrigo-sawgrass/proposal"');
     expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-units-7-8-replacement-proposal.pdf")).length).toBeGreaterThan(0);
   });
 

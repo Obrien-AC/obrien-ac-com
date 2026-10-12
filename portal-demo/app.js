@@ -33,6 +33,7 @@ const LOCATION_INTELLIGENCE={
  "arrigo-margate":{score:67,status:"Action Required",tone:"critical",exposure:37047,next:"Drain correction"}
 };
 const CAPITAL_PLAN=[
+ {year:"2026",locationId:"arrigo-sawgrass",asset:"Units 7 & 8 Elite HVAC replacement bundle",priority:"Critical",amount:76892,status:"Updated proposal ready · 6% bundle discount"},
  {year:"2026",locationId:"arrigo-sawgrass",asset:"RTU-09 & RTU-10 replacement package",priority:"Critical",amount:96911,status:"Proposal ready"},
  {year:"2026",locationId:"arrigo-margate",asset:"Roof drainage corrections",priority:"Critical",amount:37047,status:"Review required"},
  {year:"2027",locationId:"bmw-pompano-beach",asset:"Showroom RTU lifecycle allowance",priority:"Plan soon",amount:24000,status:"Budget placeholder"},
@@ -41,6 +42,7 @@ const CAPITAL_PLAN=[
  {year:"2030",locationId:"volkswagen-pompano-beach",asset:"Rooftop renewal reserve",priority:"Monitor",amount:32000,status:"Forecast"}
 ];
 const PORTFOLIO_ALERTS=[
+ {tone:"critical",title:"Updated proposal ready",detail:"Arrigo Sawgrass · Units 7 & 8 Elite bundle · $76,892",action:"Review proposal",route:"#/location/arrigo-sawgrass/proposal"},
  {tone:"critical",title:"Replacement decision required",detail:"Arrigo Sawgrass · Units 9 and 10",action:"Review proposal",route:"#/location/arrigo-sawgrass"},
  {tone:"critical",title:"Drainage correction recommended",detail:"Arrigo Margate · 10 documented findings",action:"Open condition report",route:"#/location/arrigo-margate"},
  {tone:"watch",title:"Upcoming service window",detail:"BMW of Coconut Creek · Oct 22, 8 AM–12 PM",action:"View schedule",route:"#/services"}
