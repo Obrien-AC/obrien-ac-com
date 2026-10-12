@@ -10,6 +10,7 @@ function send(response, status, body) {
 export default async function handler(request, response) {
   if (request.headers.origin !== allowedOrigin) return send(response, 403, { error: "Origin not allowed." });
   if (request.method === "OPTIONS") {
+    response.setHeader("Access-Control-Allow-Origin", allowedOrigin);
     response.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     response.setHeader("Access-Control-Allow-Headers", "content-type");
     response.setHeader("Access-Control-Max-Age", "600");
