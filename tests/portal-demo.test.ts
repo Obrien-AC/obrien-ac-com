@@ -112,8 +112,12 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function coconutHistory");
     expect(app).toContain("OB-PM-2026-1008-01");
     expect(app).toContain("const COCONUT_THERMOSTATS=");
-    expect(app).toContain("Mock thermostat reading · Demo only");
+    expect(app).toContain("Mock telemetry");
     expect(app).toContain("equipment-thermostat");
+    expect(app).toContain("COCONUT_ASSET_DETAILS");
+    expect(app).toContain('id="equipment-search"');
+    expect(app).toContain('data-equipment-alerts');
+    expect(app).toContain("equipment-sparkline");
     expect(app).toContain("Sample report · Not an actual inspection");
   });
 
