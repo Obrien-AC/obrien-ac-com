@@ -141,6 +141,16 @@ describe("static customer portal demo", () => {
     expect(app).toContain("BMW Coconut Creek Facilities Team");
   });
 
+  it("shows matched before-and-after demo evidence for the CU-02 request", () => {
+    for (const file of ["bmw-coconut-creek-cu02-before.webp", "bmw-coconut-creek-cu02-after.webp"]) {
+      expect(app).toContain(`./assets/${file}`);
+      expect(readFileSync(resolve(root, `assets/${file}`)).length).toBeGreaterThan(0);
+    }
+    expect(app).toContain("Demonstration imagery — not an actual BMW field record.");
+    expect(app).toContain('class="request-evidence"');
+    expect(styles).toContain(".service-evidence img");
+  });
+
   it("keeps all portal and location functions visible on mobile", () => {
     expect(styles).toContain(".portal-nav{display:grid");
     expect(styles).toContain(".location-tabs{display:grid");
