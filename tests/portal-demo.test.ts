@@ -107,6 +107,9 @@ describe("static customer portal demo", () => {
     expect(app).toContain("6% Morgan Preferred Discount · $8,478 savings");
     expect(app).toContain('id:"UNIT-07",name:"Rooftop Unit 7",area:"Finance Department"');
     expect(app).toContain('id:"UNIT-08",name:"Rooftop Unit 8",area:"Mezzanine Showroom"');
+    expect(app).toContain('title:"Units 9 & 10 HVAC Replacement · Executive Office & Service Advisor"');
+    expect(app).toContain('id:"UNIT-09",name:"Rooftop Unit 9",area:"Executive Office"');
+    expect(app).toContain('id:"UNIT-10",name:"Rooftop Unit 10",area:"Service Advisor"');
     expect(app).toContain("function locationProposalDocuments");
     expect(app).toContain('asset:"Units 7 & 8 Morgan Preferred replacement"');
     expect(app).toContain('amount:132822,status:"Proposal ready · 6% preferred discount"');
