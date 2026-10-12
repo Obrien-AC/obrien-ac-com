@@ -29,7 +29,7 @@ describe("static customer portal demo", () => {
     expect(app).toContain("#/dashboard");
   });
 
-  it("gives the presentation location manager all nine portfolio locations", () => {
+  it("gives the presentation location manager the complete portfolio", () => {
     expect(app).toContain('"morgan@obrienaccounts.com":{password:"morganfamily",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
     expect(app).toContain('title:"Ten rooftop units. Clear action priorities."');
     expect(app).toContain('title:"Drainage risk, organized by documented unit."');
@@ -43,7 +43,16 @@ describe("static customer portal demo", () => {
   });
 
   it("assigns a dashboard image to every authorized location", () => {
-    expect((app.match(/photo:"\.\/assets\//g) || [])).toHaveLength(9);
+    expect((app.match(/photo:"\.\/assets\//g) || [])).toHaveLength(10);
+  });
+
+  it("adds a secure Morgan residential live-status workspace", () => {
+    expect(app).toContain('id:"morgan-residence"');
+    expect(app).toContain("function residentialPanel");
+    expect(app).toContain("function refreshHomeAssistant");
+    expect(app).toContain('sessionStorage.getItem("obrienHaUrl")');
+    expect(app).not.toContain("Bearer ey");
+    expect(readFileSync(resolve(root, "assets/morgan-residence.png")).length).toBeGreaterThan(0);
   });
 
   it("adds Arrigo Sawgrass and Margate with logos, building images, and condition reports", () => {
