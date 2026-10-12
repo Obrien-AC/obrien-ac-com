@@ -5,7 +5,7 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 ## Demo accounts
 
 - Group manager: `group@demo.obrienac.com` / `MorganDemo!`
-- Morgan location manager with all nine portfolio locations: `morgan@obrienaccounts.com` / `morganfamily`
+- Morgan location manager with all nine portfolio locations: `morgan@obrienac.com` / `morganfamily`
 - O'Brien administrator: `admin@demo.obrienac.com` / `ObrienDemo!`
 
 ## Documents

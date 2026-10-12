@@ -25,13 +25,14 @@ describe("static customer portal demo", () => {
 
   it("supports all three presentation roles and hash navigation", () => {
     expect(app).toContain("group@demo.obrienac.com");
-    expect(app).toContain("morgan@obrienaccounts.com");
+    expect(app).toContain("morgan@obrienac.com");
+    expect(app).not.toContain("morgan@obrienaccounts.com");
     expect(app).toContain("admin@demo.obrienac.com");
     expect(app).toContain("#/dashboard");
   });
 
   it("gives the presentation location manager the complete portfolio", () => {
-    expect(app).toContain('"morgan@obrienaccounts.com":{password:"morganfamily",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
+    expect(app).toContain('"morgan@obrienac.com":{password:"morganfamily",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
     expect(app).toContain('title:"Ten rooftop units. Clear action priorities."');
     expect(app).toContain('title:"Drainage risk, organized by documented unit."');
     expect(app).toContain('data-location-tab="equipment"');
