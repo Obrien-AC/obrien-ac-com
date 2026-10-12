@@ -16,21 +16,20 @@ export default async function handler(request, response) {
     response.setHeader("Access-Control-Max-Age", "600");
     return response.status(204).end();
   }
-  if (request.method !== "POST") return send(response, 405, { error: "Method not allowed." });
+  if (!["GET", "POST"].includes(request.method)) return send(response, 405, { error: "Method not allowed." });
 
-  const payload = request.body || {};
   let endpoint;
   try {
-    endpoint = new URL(String(payload.url || ""));
+    endpoint = new URL(String(process.env.HA_URL || ""));
   } catch {
-    return send(response, 400, { error: "Invalid Home Assistant URL." });
+    return send(response, 503, { error: "Home Assistant is not configured." });
   }
   if (endpoint.protocol !== "https:" || !endpoint.hostname.endsWith(".ui.nabu.casa")) {
     return send(response, 400, { error: "Only secure Home Assistant Cloud URLs are accepted." });
   }
 
-  const token = String(payload.token || "");
-  if (token.length < 40 || token.length > 1000) return send(response, 400, { error: "Invalid access token." });
+  const token = String(process.env.HA_TOKEN || "");
+  if (token.length < 40 || token.length > 1000) return send(response, 503, { error: "Home Assistant is not configured." });
 
   try {
     const homeAssistant = await fetch(new URL("/api/states", endpoint), {
