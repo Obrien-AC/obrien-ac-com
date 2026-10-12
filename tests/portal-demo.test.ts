@@ -100,16 +100,17 @@ describe("static customer portal demo", () => {
   });
 
   it("adds the Units 7 and 8 Morgan Preferred replacement proposal to Arrigo Sawgrass", () => {
-    expect(app).toContain("Units 7 & 8 Morgan Preferred HVAC Replacement");
+    expect(app).toContain("Units 7 & 8 · Finance Department & Mezzanine Showroom");
     expect(app).toContain("UNITS 7 & 8 · MORGAN PREFERRED");
     expect(app).toContain("$132,822.00");
     expect(app).toContain("including two condensers, two matching air handlers, heat kits, demolition, installation and commissioning");
     expect(app).toContain("6% Morgan Preferred Discount · $8,478 savings");
     expect(app).toContain('id:"UNIT-07",name:"Rooftop Unit 7",area:"Finance Department"');
     expect(app).toContain('id:"UNIT-08",name:"Rooftop Unit 8",area:"Mezzanine Showroom"');
-    expect(app).toContain('title:"Units 9 & 10 HVAC Replacement · Executive Office & Service Advisor"');
-    expect(app).toContain('id:"UNIT-09",name:"Rooftop Unit 9",area:"Executive Office"');
-    expect(app).toContain('id:"UNIT-10",name:"Rooftop Unit 10",area:"Service Advisor"');
+    expect(app).toContain('title:"Units 7 & 8 · Finance Department & Mezzanine Showroom"');
+    expect(app).toContain('title:"Units 9 & 10 · Second-Floor Executive Area & Service Advisor Room"');
+    expect(app).toContain('id:"UNIT-09",name:"Rooftop Unit 9",area:"Second-Floor Executive Area"');
+    expect(app).toContain('id:"UNIT-10",name:"Rooftop Unit 10",area:"Service Advisor Room"');
     expect(app).toContain("function locationProposalDocuments");
     expect(app).toContain('asset:"Units 7 & 8 Morgan Preferred replacement"');
     expect(app).toContain('amount:132822,status:"Proposal ready · 6% preferred discount"');
