@@ -20,6 +20,12 @@ Customer Login opens the bundled static presentation portal at
 `localStorage`; it is not production authentication or private document storage.
 Its sample proposal PDFs are public static assets.
 
+Presentation account for the Arrigo Sawgrass workspace:
+
+- Email: `sawgrass@obrienac.com`
+- Password: `saw123`
+- Access: Arrigo CDJR Sawgrass only, with the complete portal feature set
+
 ## Development
 
 ```bash

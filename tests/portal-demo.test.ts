@@ -45,6 +45,17 @@ describe("static customer portal demo", () => {
     expect(app).toContain('View asset details');
   });
 
+  it("scopes the Sawgrass account to one featured location while retaining every portal feature", () => {
+    expect(app).toContain('"sawgrass@obrienac.com":{password:"saw123",name:"Arrigo Sawgrass Manager",role:"location",locationIds:["arrigo-sawgrass"],featuredLocationId:"arrigo-sawgrass"}');
+    expect(app).toContain("function allowedLocationIds");
+    expect(app).toContain("function portfolioAlerts");
+    expect(app).toContain("function scopedCapitalPlan");
+    expect(app).toContain('a.featuredLocationId===l.id?{...l,featured:true}:l');
+    for (const route of ["#/requests", "#/alerts", "#/capital", "#/report", "#/documents", "#/proposals", "#/services", "#/presentation"]) {
+      expect(app).toContain(route);
+    }
+  });
+
   it("assigns a dashboard image to every authorized location", () => {
     expect((app.match(/photo:"\.\/assets\//g) || [])).toHaveLength(10);
   });
