@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 const root = resolve(process.cwd(), "portal-demo");
 const app = readFileSync(resolve(root, "app.js"), "utf8");
 const html = readFileSync(resolve(root, "index.html"), "utf8");
+const styles = readFileSync(resolve(root, "style.css"), "utf8");
 const manifest = JSON.parse(readFileSync(resolve(root, "data/documents.json"), "utf8"));
 
 describe("static customer portal demo", () => {
@@ -133,6 +134,17 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function reportUnitModal");
     expect(app).toContain("Unit is not working");
     expect(app).toContain("it does not contact O'Brien or dispatch service");
+    expect(app).toContain('id:"demo-bmw-cc-cu02"');
+    expect(app).toContain("BMW Coconut Creek Facilities Team");
+  });
+
+  it("keeps all portal and location functions visible on mobile", () => {
+    expect(styles).toContain(".portal-nav{display:grid");
+    expect(styles).toContain(".location-tabs{display:grid");
+    expect(styles).toContain("grid-template-columns:repeat(2,minmax(0,1fr))");
+    for (const route of ["#/requests", "#/alerts", "#/capital", "#/report", "#/documents", "#/proposals", "#/services", "#/presentation"]) {
+      expect(app).toContain(route);
+    }
   });
 
   it("attaches viewable PDF examples to every BMW workspace area", () => {

@@ -119,9 +119,10 @@ const SERVICES=LOCATIONS.slice(0,4).map((l,i)=>({id:`service-${i}`,locationId:l.
 const app=document.querySelector("#app"),logout=document.querySelector("#logout"),managerButton=document.querySelector("#account-manager"),transferButton=document.querySelector("#data-transfer"),modal=document.querySelector("#modal");
 let homeAssistantSession={entities:[],connected:false,loading:false,error:""};
 const key="obrienPortalDemoV1"; let files={};
-const baseState=()=>({session:null,statuses:Object.fromEntries(PROPOSALS.map(p=>[p.id,p.status])),activity:[{text:"Demo portfolio prepared",at:"Oct 8, 2026 · 9:00 AM"}],services:SERVICES,decisions:{},requests:[]});
+const DEMO_REQUEST={id:"demo-bmw-cc-cu02",locationId:"bmw-coconut-creek",unitId:"CU-02",issue:"Not cooling properly",priority:"Urgent",details:"Demo request: IT / Communications area is above the 70°F target and requires a cooling performance review.",contact:"BMW Coconut Creek Facilities Team",createdAt:"Oct 12, 2026 · Demo record",status:"Open demo request"};
+const baseState=()=>({session:null,statuses:Object.fromEntries(PROPOSALS.map(p=>[p.id,p.status])),activity:[{text:"Demo portfolio prepared",at:"Oct 8, 2026 · 9:00 AM"}],services:SERVICES,decisions:{},requests:[DEMO_REQUEST]});
 let state=load();
-function load(){try{return {...baseState(),...JSON.parse(localStorage.getItem(key)||"{}")}}catch{return baseState()}}
+function load(){try{const loaded={...baseState(),...JSON.parse(localStorage.getItem(key)||"{}")},requests=Array.isArray(loaded.requests)?loaded.requests:[];if(!requests.some(r=>r.locationId===DEMO_REQUEST.locationId&&r.unitId===DEMO_REQUEST.unitId&&r.issue===DEMO_REQUEST.issue))requests.unshift(DEMO_REQUEST);return {...loaded,requests}}catch{return baseState()}}
 function save(){localStorage.setItem(key,JSON.stringify(state))}
 function cleanText(value,max=500){return String(value??"").replace(/[<>]/g,"").slice(0,max)}
 function exportDemoData(){
