@@ -145,6 +145,7 @@ describe("static customer portal demo", () => {
 
   it("exports and imports browser-local demo data without credentials or PDFs", () => {
     expect(html).toContain('id="data-transfer"');
+    expect(app).toContain('transferButton.classList.toggle("hidden",account().role!=="admin")');
     expect(app).toContain("function exportDemoData");
     expect(app).toContain("function normalizeImport");
     expect(app).toContain("function importDemoData");
