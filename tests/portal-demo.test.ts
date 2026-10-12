@@ -53,6 +53,7 @@ describe("static customer portal demo", () => {
     expect(app).toContain("https://obrien-ha-relay.vercel.app/api/ha-status");
     expect(app).toContain("Loading secure live thermostat status");
     expect(app).not.toContain("Connect Home Assistant");
+    expect(app).toContain('location.hash.includes("/location/morgan-residence")');
     expect(app).not.toContain("Bearer ey");
     expect(app).toContain("O'Brien Elite Membership");
     expect(app).toContain("Always connected. Always informed.");
