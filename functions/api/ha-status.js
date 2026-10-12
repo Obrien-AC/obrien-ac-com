@@ -36,10 +36,20 @@ export async function onRequestPost({ request }) {
   if (token.length < 40 || token.length > 1000) return json({ error: "Invalid access token." }, 400);
 
   try {
-    const response = await fetch(new URL("/api/states", endpoint), {
-      headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
+    const response = await fetch(new URL("/api/states", endpoint).toString(), {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
+        "User-Agent": "OBrien-Elite-Portal/1.0",
+      },
     });
-    if (!response.ok) return json({ error: `Home Assistant returned ${response.status}.` }, response.status === 401 ? 401 : 502);
+    if (!response.ok) {
+      const detail = (await response.text()).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 180);
+      return json(
+        { error: `Home Assistant returned ${response.status}.${detail ? ` ${detail}` : ""}` },
+        response.status === 401 ? 401 : 502,
+      );
+    }
     const states = await response.json();
     const climate = Array.isArray(states)
       ? states.filter((entity) => String(entity.entity_id || "").startsWith("climate."))
