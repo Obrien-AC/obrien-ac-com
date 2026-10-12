@@ -32,7 +32,8 @@ describe("static customer portal demo", () => {
   });
 
   it("gives the presentation location manager the complete portfolio", () => {
-    expect(app).toContain('"morgan@obrienac.com":{password:"morganfamily",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
+    expect(app).toContain('"morgan@obrienac.com":{password:"saw123",name:"Morgan Dealership Manager",role:"location",locationIds:"all"}');
+    expect(app).not.toContain('password:"morganfamily"');
     expect(app).toContain('title:"Ten rooftop units. Clear action priorities."');
     expect(app).toContain('title:"Drainage risk, organized by documented unit."');
     expect(app).toContain('data-location-tab="equipment"');
