@@ -50,6 +50,7 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function allowedLocationIds");
     expect(app).toContain("function portfolioAlerts");
     expect(app).toContain("function scopedCapitalPlan");
+    expect(app).toContain("function scopedActivity");
     expect(app).toContain('a.featuredLocationId===l.id?{...l,featured:true}:l');
     for (const route of ["#/requests", "#/alerts", "#/capital", "#/report", "#/documents", "#/proposals", "#/services", "#/presentation"]) {
       expect(app).toContain(route);
