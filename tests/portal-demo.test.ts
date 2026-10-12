@@ -109,15 +109,17 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function coconutUpcoming");
     expect(app).toContain("function coconutHistory");
     expect(app).toContain("OB-PM-2026-1008-01");
-    expect(app).toContain("function coconutThermostatDemo");
-    expect(app).toContain("Mock telemetry · Demonstration only");
-    expect(app).toContain("Not connected to building controls");
+    expect(app).toContain("const COCONUT_THERMOSTATS=");
+    expect(app).toContain("Mock thermostat reading · Demo only");
+    expect(app).toContain("equipment-thermostat");
     expect(app).toContain("Sample report · Not an actual inspection");
   });
 
   it("provides a demo equipment registry and unit issue workflow", () => {
     expect(app).toContain("const COCONUT_EQUIPMENT=");
     expect(app).toContain('data-location-tab="equipment"');
+    expect(app).toContain("COCONUT_THERMOSTATS");
+    expect(app).toContain("equipment-thermostat");
     expect(app).toContain("function reportUnitModal");
     expect(app).toContain("Unit is not working");
     expect(app).toContain("it does not contact O'Brien or dispatch service");
