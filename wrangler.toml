@@ -1,0 +1,4 @@
+name = "obrien-ac"
+pages_build_output_dir = "./out"
+compatibility_date = "2026-10-11"
+compatibility_flags = ["global_fetch_strictly_public"]
