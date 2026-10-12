@@ -109,6 +109,9 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function coconutUpcoming");
     expect(app).toContain("function coconutHistory");
     expect(app).toContain("OB-PM-2026-1008-01");
+    expect(app).toContain("function coconutThermostatDemo");
+    expect(app).toContain("Mock telemetry · Demonstration only");
+    expect(app).toContain("Not connected to building controls");
     expect(app).toContain("Sample report · Not an actual inspection");
   });
 
