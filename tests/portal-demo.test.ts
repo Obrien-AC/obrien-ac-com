@@ -86,16 +86,16 @@ describe("static customer portal demo", () => {
     }
   });
 
-  it("adds the Units 7 and 8 Elite replacement bundle to Arrigo Sawgrass", () => {
-    expect(app).toContain("Units 7 & 8 Elite HVAC Replacement Bundle");
-    expect(app).toContain("UNITS 7 & 8 · UPDATED");
-    expect(app).toContain("$76,892.00");
-    expect(app).toContain("Existing indoor handlers remain on site and are not included for removal or disposal.");
-    expect(app).toContain("Updated scope · 6% discount · $4,908 savings");
+  it("adds the Units 7 and 8 Morgan Preferred replacement proposal to Arrigo Sawgrass", () => {
+    expect(app).toContain("Units 7 & 8 Morgan Preferred HVAC Replacement");
+    expect(app).toContain("UNITS 7 & 8 · MORGAN PREFERRED");
+    expect(app).toContain("$132,822.00");
+    expect(app).toContain("including two condensers, two matching air handlers, heat kits, demolition, installation and commissioning");
+    expect(app).toContain("6% Morgan Preferred Discount · $8,478 savings");
     expect(app).toContain("function locationProposalDocuments");
-    expect(app).toContain('asset:"Units 7 & 8 Elite HVAC replacement bundle"');
-    expect(app).toContain('amount:76892,status:"Updated proposal ready · 6% bundle discount"');
-    expect(app).toContain('title:"Updated proposal ready",detail:"Arrigo Sawgrass · Units 7 & 8 Elite bundle · $76,892"');
+    expect(app).toContain('asset:"Units 7 & 8 Morgan Preferred replacement"');
+    expect(app).toContain('amount:132822,status:"Proposal ready · 6% preferred discount"');
+    expect(app).toContain('title:"Morgan Preferred proposal ready",detail:"Arrigo Sawgrass · Units 7 & 8 · $132,822"');
     expect(app).toContain('route:"#/location/arrigo-sawgrass/proposal"');
     expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-units-7-8-replacement-proposal.pdf")).length).toBeGreaterThan(0);
   });
