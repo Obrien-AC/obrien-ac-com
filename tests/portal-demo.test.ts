@@ -52,7 +52,9 @@ describe("static customer portal demo", () => {
     expect(app).toContain("function refreshHomeAssistant");
     expect(app).toContain('sessionStorage.getItem("obrienHaUrl")');
     expect(app).not.toContain("Bearer ey");
-    expect(readFileSync(resolve(root, "assets/morgan-residence.png")).length).toBeGreaterThan(0);
+    expect(app).toContain("O'Brien Elite Membership");
+    expect(app).toContain("Always connected. Always informed.");
+    expect(readFileSync(resolve(root, "assets/obrien-elite-membership.png")).length).toBeGreaterThan(0);
   });
 
   it("adds Arrigo Sawgrass and Margate with logos, building images, and condition reports", () => {
