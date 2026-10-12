@@ -60,7 +60,10 @@ const COCONUT_THERMOSTATS={
  "RTU-02":{zone:"Main Showroom",current:73,target:72,humidity:48,mode:"Cooling"},
  "RTU-03":{zone:"Customer Lounge",current:72,target:72,humidity:46,mode:"Holding"},
  "RTU-04":{zone:"Sales Offices",current:75,target:72,humidity:51,mode:"Attention"},
- "AHU-01":{zone:"Service Drive",current:74,target:73,humidity:54,mode:"Cooling"}
+ "AHU-01":{zone:"Service Drive",current:74,target:73,humidity:54,mode:"Cooling"},
+ "AHU-02":{zone:"Parts Department",current:73,target:72,humidity:50,mode:"Cooling"},
+ "CU-01":{zone:"Administration",current:72,target:72,humidity:47,mode:"Holding"},
+ "CU-02":{zone:"IT / Communications",current:78,target:70,humidity:44,mode:"Attention"}
 };
 const ARRIGO_EQUIPMENT={
  "arrigo-sawgrass":{

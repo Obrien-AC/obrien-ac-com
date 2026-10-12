@@ -122,6 +122,9 @@ describe("static customer portal demo", () => {
     expect(app).toContain('data-location-tab="equipment"');
     expect(app).toContain("COCONUT_THERMOSTATS");
     expect(app).toContain("equipment-thermostat");
+    for (const id of ["RTU-01", "RTU-02", "RTU-03", "RTU-04", "AHU-01", "AHU-02", "CU-01", "CU-02"]) {
+      expect(app).toContain(`"${id}":{zone:`);
+    }
     expect(app).toContain("function reportUnitModal");
     expect(app).toContain("Unit is not working");
     expect(app).toContain("it does not contact O'Brien or dispatch service");
