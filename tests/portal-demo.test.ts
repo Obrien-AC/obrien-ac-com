@@ -127,6 +127,15 @@ describe("static customer portal demo", () => {
     expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-electrical-plans.pdf")).length).toBeGreaterThan(0);
   });
 
+  it("adds the positive CasLink equipment snapshot to Sawgrass", () => {
+    expect(app).toContain("const SAWGRASS_CASLINK_UNITS=");
+    expect((app.match(/id:"FAN #[1-8]"/g) || [])).toHaveLength(8);
+    expect(app).toContain("Eight connected units. Eight active cooling responses.");
+    expect(app).toContain("All eight units show intake-to-discharge temperature reduction");
+    expect(app).toContain("function sawgrassCaslinkPanel");
+    expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-caslink-performance-report.pdf")).length).toBeGreaterThan(0);
+  });
+
   it("does not expose demo credentials or bypass buttons in the login UI", () => {
     expect(app).not.toContain("featured-demo");
     expect(app).not.toContain("demo-access");
