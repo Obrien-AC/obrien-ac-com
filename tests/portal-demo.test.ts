@@ -136,6 +136,15 @@ describe("static customer portal demo", () => {
     expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-caslink-performance-report.pdf")).length).toBeGreaterThan(0);
   });
 
+  it("adds the CaptiveAire maintenance-plan proposal to Arrigo Sawgrass", () => {
+    expect(app).toContain('title:"CaptiveAire Preventive Maintenance Program"');
+    expect(app).toContain('reference:"MAINTENANCE PLAN PROPOSAL"');
+    expect(app).toContain('$18,988.00 / year');
+    expect(app).toContain('8 covered units · 6 visits per year · Standard filters included');
+    expect(app).toContain('6% Morgan Preferred Discount · $1,212 annual savings');
+    expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-captiveaire-maintenance-proposal.pdf")).length).toBeGreaterThan(0);
+  });
+
   it("does not expose demo credentials or bypass buttons in the login UI", () => {
     expect(app).not.toContain("featured-demo");
     expect(app).not.toContain("demo-access");
