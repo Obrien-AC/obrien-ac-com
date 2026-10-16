@@ -10,6 +10,8 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 
 The public showcase is isolated from existing demo accounts. It uses the separate `obrienPublicShowcaseV1` browser key, fictional locations and clearly labeled sample PDFs. Resetting or interacting with the showcase cannot modify an existing customer-demo session or its records.
 
+The showcase and guided presentation require the presentation PIN. Successful access is retained only in `sessionStorage`, so closing the tab or selecting **Lock demo** requires the PIN again. This is a client-side gate for a static presentation, not secure server-side authentication.
+
 ## Demo accounts
 
 - Group manager: `group@demo.obrienac.com` / `MorganDemo!`

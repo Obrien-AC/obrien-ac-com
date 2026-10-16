@@ -12,6 +12,10 @@ const manifest = JSON.parse(readFileSync(resolve(root, "data/documents.json"), "
 describe("static customer portal demo", () => {
   it("keeps the public showcase isolated and fictional", () => {
     expect(showcase).toContain('const key = "obrienPublicShowcaseV1"');
+    expect(showcase).toContain('const accessKey = "obrienPublicShowcaseUnlocked"');
+    expect(showcase).toContain("sessionStorage.getItem(accessKey)");
+    expect(showcase).toContain("pinGate");
+    expect(showcase).not.toContain('=== "1025"');
     expect(showcase).toContain("Fictional demonstration data");
     expect(showcase).not.toContain("obrienPortalDemoV1");
     expect(app).toContain("#/demo/portfolio");
