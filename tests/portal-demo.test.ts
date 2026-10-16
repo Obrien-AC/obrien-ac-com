@@ -23,6 +23,10 @@ describe("static customer portal demo", () => {
     for (const file of ["harbor-point-condition-report-demo.pdf", "harbor-point-replacement-proposal-demo.pdf", "cypress-maintenance-agreement-demo.pdf", "palm-ridge-service-report-demo.pdf"]) {
       expect(readFileSync(resolve(root, "documents", file)).length).toBeGreaterThan(0);
     }
+    for (const file of ["demo-harbor-point-building.webp", "demo-rooftop-unit.webp", "demo-air-handler.webp", "demo-exhaust-fan.webp"]) {
+      expect(showcase).toContain(`./assets/${file}`);
+      expect(readFileSync(resolve(root, "assets", file)).length).toBeGreaterThan(0);
+    }
   });
   it("has seven proposal metadata records without publishing confidential PDFs", () => {
     expect(manifest).toHaveLength(7);
