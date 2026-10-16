@@ -147,10 +147,11 @@ describe("static customer portal demo", () => {
 
   it("creates a BMW Coconut Creek-only account with a real supplied proposal", () => {
     expect(app).toContain('"bmwcoconut@obrienac.com":{password:"bmwc123",name:"BMW Coconut Creek Manager",role:"location",locationIds:["bmw-coconut-creek"]}');
-    expect(app).toContain('title:"Two-System Commercial HVAC Replacement"');
+    expect(app).toContain('title:"Lobby Kitchen & Lobby Restrooms · Two-System HVAC Replacement"');
     expect(app).toContain('metric:"$70,124.00"');
     expect(app).toContain('6% Elite Member discount · $4,476 savings');
-    expect(app).toContain('sourceLabel:"REAL SUPPLIED PROPOSAL"');
+    expect(app).toContain('Lobby Kitchen · 2-ton  |  Lobby Restrooms · 7.5-ton');
+    expect(app).toContain('sourceLabel:"REAL SUPPLIED PROPOSAL · UPDATED LOCATIONS"');
     expect(app).toContain('DEMO PORTAL');
     expect(app).toContain('REAL SUPPLIED DATA');
     expect(readFileSync(resolve(root, "documents/bmw-coconut-creek-5day-elite-member-proposal.pdf")).length).toBeGreaterThan(0);
