@@ -16,6 +16,7 @@ const mapUrl =
 const phoneHref = "tel:+19542051381";
 const phoneDisplay = "(954) 205-1381";
 const portalDemoUrl = "/portal-demo/#/login";
+const portalTourUrl = "/portal-demo/#/tour/0";
 
 const services = [
   {
@@ -91,12 +92,12 @@ export default async function Home() {
           <a href="#standard">Standard</a>
           <a href="/membership">Membership</a>
           <a href="#location">Location</a>
-          <a className="customer-login-nav" href={portalDemoUrl}>Customer Login</a>
+          <a className="customer-login-nav" href={portalDemoUrl}>Customer Login</a><a className="customer-login-nav portal-explore-nav" href={portalTourUrl}>Explore Portal Demo</a>
         </nav>
 
         <div className="header-actions">
           <Link className="mobile-membership-link" href="/membership">Membership</Link>
-          <a className="mobile-portal-link" href={portalDemoUrl}>Customer Login</a>
+          <a className="mobile-portal-link" href={portalDemoUrl}>Customer Login</a><a className="mobile-portal-link portal-explore-nav" href={portalTourUrl}>Explore Demo</a>
           <a className="account-name" href={phoneHref}>{phoneDisplay}</a>
           <a className="primary-button small" href={phoneHref}>Call Now</a>
         </div>

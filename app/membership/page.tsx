@@ -5,6 +5,7 @@ import { Phone } from "lucide-react";
 import { MembershipExperience } from "@/components/obrien/membership-experience";
 
 const portalDemoUrl = "/portal-demo/#/login";
+const portalTourUrl = "/portal-demo/#/tour/0";
 
 export const metadata: Metadata = {
   title: "O’Brien Elite Comfort Club | Residential HVAC Membership & Commercial Maintenance",
@@ -18,8 +19,8 @@ export default function MembershipPage() {
     <div className="utility-bar"><span>⌖ 4901 NW 17th Way, Fort Lauderdale</span><span>◆ Commercial & residential air conditioning</span><a href="tel:+19542051381"><Phone size={12} /> (954) 205-1381</a></div>
     <header className="site-header membership-header">
       <Link className="brand-mark" href="/" aria-label="O’Brien Air Conditioning home"><span className="brand-surface"><Image src="/assets/obrien-logo-dark.png" width={2170} height={725} alt="O’Brien Air Conditioning" priority unoptimized /></span></Link>
-      <nav className="desktop-nav" aria-label="Main navigation"><Link href="/">Home</Link><Link href="/#services">Services</Link><Link href="/#replacements">Replacements</Link><Link href="/#projects">Projects</Link><Link className="active" href="/membership">Membership</Link><a className="customer-login-nav" href={portalDemoUrl}>Customer Login</a></nav>
-      <div className="header-actions"><a className="mobile-portal-link" href={portalDemoUrl}>Customer Login</a><a className="account-name" href="tel:+19542051381">(954) 205-1381</a><a className="primary-button small" href="#enroll">Join</a></div>
+      <nav className="desktop-nav" aria-label="Main navigation"><Link href="/">Home</Link><Link href="/#services">Services</Link><Link href="/#replacements">Replacements</Link><Link href="/#projects">Projects</Link><Link className="active" href="/membership">Membership</Link><a className="customer-login-nav" href={portalDemoUrl}>Customer Login</a><a className="customer-login-nav portal-explore-nav" href={portalTourUrl}>Explore Portal Demo</a></nav>
+      <div className="header-actions"><a className="mobile-portal-link" href={portalDemoUrl}>Customer Login</a><a className="mobile-portal-link portal-explore-nav" href={portalTourUrl}>Explore Demo</a><a className="account-name" href="tel:+19542051381">(954) 205-1381</a><a className="primary-button small" href="#enroll">Join</a></div>
     </header>
     <MembershipExperience />
     <footer className="membership-footer"><Link href="/">O’Brien Air Conditioning</Link><span>4901 NW 17th Way, Suite 408 · Fort Lauderdale, FL 33309</span><a href={portalDemoUrl}>Customer Portal</a><a href="tel:+19542051381">(954) 205-1381</a><div className="site-credit"><span>Website design &amp; development by Nordwerk LLC</span><a href="mailto:nordwerk.hq@gmail.com">Website development inquiries: nordwerk.hq@gmail.com</a></div></footer>

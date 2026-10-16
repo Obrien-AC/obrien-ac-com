@@ -6,9 +6,20 @@ const root = resolve(process.cwd(), "portal-demo");
 const app = readFileSync(resolve(root, "app.js"), "utf8");
 const html = readFileSync(resolve(root, "index.html"), "utf8");
 const styles = readFileSync(resolve(root, "style.css"), "utf8");
+const showcase = readFileSync(resolve(root, "showcase.js"), "utf8");
 const manifest = JSON.parse(readFileSync(resolve(root, "data/documents.json"), "utf8"));
 
 describe("static customer portal demo", () => {
+  it("keeps the public showcase isolated and fictional", () => {
+    expect(showcase).toContain('const key = "obrienPublicShowcaseV1"');
+    expect(showcase).toContain("Fictional demonstration data");
+    expect(showcase).not.toContain("obrienPortalDemoV1");
+    expect(app).toContain("#/demo/portfolio");
+    expect(app).toContain("#/tour/0");
+    for (const file of ["harbor-point-condition-report-demo.pdf", "harbor-point-replacement-proposal-demo.pdf", "cypress-maintenance-agreement-demo.pdf", "palm-ridge-service-report-demo.pdf"]) {
+      expect(readFileSync(resolve(root, "documents", file)).length).toBeGreaterThan(0);
+    }
+  });
   it("has seven proposal metadata records without publishing confidential PDFs", () => {
     expect(manifest).toHaveLength(7);
     expect(manifest.every((document: { publicDocument: boolean }) => document.publicDocument === false)).toBe(true);

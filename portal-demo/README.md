@@ -2,6 +2,14 @@
 
 Static GitHub Pages presentation portal. It uses simulated browser-only accounts and localStorage. It is not production authentication and must not contain confidential documents.
 
+## Public guided showcase
+
+- Guided presentation: `/portal-demo/#/tour/0`
+- Interactive fictional portfolio: `/portal-demo/#/demo/portfolio`
+- Customer login: `/portal-demo/#/login`
+
+The public showcase is isolated from existing demo accounts. It uses the separate `obrienPublicShowcaseV1` browser key, fictional locations and clearly labeled sample PDFs. Resetting or interacting with the showcase cannot modify an existing customer-demo session or its records.
+
 ## Demo accounts
 
 - Group manager: `group@demo.obrienac.com` / `MorganDemo!`
@@ -13,6 +21,8 @@ Static GitHub Pages presentation portal. It uses simulated browser-only accounts
 The repository includes proposal metadata and clearly labeled BMW of Coconut Creek demonstration reports. The supplied Arrigo CDJR Sawgrass Units 9 & 10 proposal, Units 7 & 8 Elite HVAC Replacement Bundle, electrical plans and Arrigo CDJR Margate maintenance proposal are attached to their matching location workspaces beside the previously supplied condition reports. Other confidential customer proposal PDFs are not committed or published through GitHub Pages; select those locally for browser-only preview.
 
 The executive presentation layer includes a portfolio health score, action-required count, documented-exposure summary, pending decisions, location-level health/status intelligence, a priority brief, role-aware context, and a searchable cross-location document center. These values are explicitly demonstration data; production use requires server-enforced identity, private storage and shared audit records.
+
+The public showcase includes four intentionally fictional PDFs for condition-report, proposal, maintenance-agreement and service-closeout preview/download testing. They contain no customer files or production data.
 
 ## Local test
 
