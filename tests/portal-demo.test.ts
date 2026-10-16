@@ -13,7 +13,7 @@ describe("static customer portal demo", () => {
     expect(manifest).toHaveLength(7);
     expect(manifest.every((document: { publicDocument: boolean }) => document.publicDocument === false)).toBe(true);
     expect(new Set(manifest.map((document: { documentId: string }) => document.documentId)).size).toBe(7);
-    expect(app).toContain("Confidential PDF not published · select it locally to preview");
+    expect(app).toContain("Simulated maintenance proposal");
     expect(app).toContain("function pickFile");
   });
 
@@ -143,6 +143,17 @@ describe("static customer portal demo", () => {
     expect(app).toContain('8 covered units · 6 visits per year · Standard filters included');
     expect(app).toContain('6% Morgan Preferred Discount · $1,212 annual savings');
     expect(readFileSync(resolve(root, "documents/arrigo-sawgrass-captiveaire-maintenance-proposal.pdf")).length).toBeGreaterThan(0);
+  });
+
+  it("creates a BMW Coconut Creek-only account with a real supplied proposal", () => {
+    expect(app).toContain('"bmwcoconut@obrienac.com":{password:"bmwc123",name:"BMW Coconut Creek Manager",role:"location",locationIds:["bmw-coconut-creek"]}');
+    expect(app).toContain('title:"Two-System Commercial HVAC Replacement"');
+    expect(app).toContain('metric:"$70,124.00"');
+    expect(app).toContain('6% Elite Member discount · $4,476 savings');
+    expect(app).toContain('sourceLabel:"REAL SUPPLIED PROPOSAL"');
+    expect(app).toContain('DEMO PORTAL');
+    expect(app).toContain('REAL SUPPLIED DATA');
+    expect(readFileSync(resolve(root, "documents/bmw-coconut-creek-5day-elite-member-proposal.pdf")).length).toBeGreaterThan(0);
   });
 
   it("does not expose demo credentials or bypass buttons in the login UI", () => {
