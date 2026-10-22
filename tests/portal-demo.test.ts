@@ -27,6 +27,12 @@ describe("static customer portal demo", () => {
       expect(showcase).toContain(`./assets/${file}`);
       expect(readFileSync(resolve(root, "assets", file)).length).toBeGreaterThan(0);
     }
+    expect(showcase).toContain("function assetDetail");
+    expect(showcase).toContain("PERFORMANCE HISTORY");
+    expect(showcase).toContain("SIMULATED COMFORT CONTROL");
+    expect(showcase).toContain("Pretend setpoint");
+    expect(showcase).toContain("UNIT HISTORY");
+    expect(showcase).toContain("This never contacts real equipment");
   });
   it("has seven proposal metadata records without publishing confidential PDFs", () => {
     expect(manifest).toHaveLength(7);
