@@ -3,7 +3,7 @@
   const modal = () => document.querySelector("#modal");
   const key = "obrienPublicShowcaseV1";
   const accessKey = "obrienPublicShowcaseUnlocked";
-  const pinDigest = "46372791018924b8cbc444334300f85a211d2f29a56f2bb4890780b5983fc201";
+  const pinToken = "MTAyNQ==";
   const sections = ["portfolio", "equipment", "conditions", "proposals", "service", "requests", "documents", "monitoring", "membership", "account"];
   const locations = [
     { id: "harbor", name: "Harbor Point Motors", type: "Automotive", address: "1000 Meridian Drive · Demo City, FL", score: 91, status: "Operational", assets: 12, attention: 2, color: "blue", photo: "./assets/demo-harbor-point-building.webp" },
@@ -19,12 +19,11 @@
   function load() { try { return { ...base(), ...JSON.parse(localStorage.getItem(key) || "{}") }; } catch { return base(); } }
   function save() { localStorage.setItem(key, JSON.stringify(state)); }
   function isUnlocked() { return sessionStorage.getItem(accessKey) === "yes"; }
-  async function digest(value) { const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)); return [...new Uint8Array(bytes)].map(byte => byte.toString(16).padStart(2, "0")).join(""); }
   function pinGate(destination, detail = "") {
     cleanChrome();
     root().innerHTML = `<section class="pin-gate"><div><span class="showcase-chip">PRIVATE PUBLIC DEMO</span><p class="kicker">O'BRIEN ELITE PORTAL</p><h1>Enter presentation PIN.</h1><p>This PIN protects the guided presentation and fictional interactive showcase. Existing customers can continue directly to the customer login.</p><form id="showcase-pin-form" class="pin-card"><label>4-digit PIN<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="one-time-code" required autofocus></label><p class="error" id="showcase-pin-error" role="alert"></p><button class="button primary">Unlock demo</button></form><button class="ghost" type="button" data-customer>Return to customer login</button><small>Static demo notice: this client-side PIN limits casual access but is not server-enforced authentication.</small></div></section>`;
     document.querySelector("[data-customer]").onclick = () => { location.hash = "#/login"; };
-    document.querySelector("#showcase-pin-form").onsubmit = async event => { event.preventDefault(); const formElement = event.currentTarget, form = new FormData(formElement), value = String(form.get("pin") || ""); if (await digest(value) !== pinDigest) { document.querySelector("#showcase-pin-error").textContent = "That PIN is not correct."; formElement.reset(); formElement.elements.pin.focus(); return; } sessionStorage.setItem(accessKey, "yes"); location.hash = destination === "tour" ? `#/tour/${detail || 0}` : `#/demo/${detail || "portfolio"}`; };
+    document.querySelector("#showcase-pin-form").onsubmit = event => { event.preventDefault(); const formElement = event.currentTarget, form = new FormData(formElement), value = String(form.get("pin") || ""); if (btoa(value) !== pinToken) { document.querySelector("#showcase-pin-error").textContent = "That PIN is not correct."; formElement.reset(); formElement.elements.pin.focus(); return; } sessionStorage.setItem(accessKey, "yes"); location.hash = destination === "tour" ? `#/tour/${detail || 0}` : `#/demo/${detail || "portfolio"}`; };
   }
   function route(section) { location.hash = `#/demo/${section}`; }
   function cleanChrome() {
