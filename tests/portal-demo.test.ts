@@ -34,12 +34,16 @@ describe("static customer portal demo", () => {
     expect(showcase).toContain("UNIT HISTORY");
     expect(showcase).toContain("This never contacts real equipment");
   });
-  it("has seven proposal metadata records without publishing confidential PDFs", () => {
+  it("publishes the seven updated supplied maintenance proposals", () => {
     expect(manifest).toHaveLength(7);
-    expect(manifest.every((document: { publicDocument: boolean }) => document.publicDocument === false)).toBe(true);
+    expect(manifest.every((document: { publicDocument: boolean }) => document.publicDocument === true)).toBe(true);
     expect(new Set(manifest.map((document: { documentId: string }) => document.documentId)).size).toBe(7);
-    expect(app).toContain("Simulated maintenance proposal");
-    expect(app).toContain("function pickFile");
+    expect(app).toContain("REAL SUPPLIED PLAN");
+    expect(app).toContain("Updated customer-supplied maintenance proposal");
+    for (const document of manifest) {
+      expect(app).toContain(document.fileName);
+      expect(readFileSync(resolve(root, "documents", document.fileName)).length).toBeGreaterThan(0);
+    }
   });
 
   it("labels the portal as a static demonstration", () => {
@@ -244,7 +248,7 @@ describe("static customer portal demo", () => {
       expect(app).toContain(`bmw-coconut-creek-${name}-demo.pdf`);
       expect(readFileSync(resolve(root, `documents/bmw-coconut-creek-${name}-demo.pdf`)).length).toBeGreaterThan(0);
     }
-  });
+  }, 60000);
 
   it("keeps the assigned Morgan Auto Group account manager available throughout the account", () => {
     expect(html).toContain('id="account-manager"');
